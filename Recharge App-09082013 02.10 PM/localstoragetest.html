@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.0.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        window.localStorage.setItem("key", "value");
+        var keyname = window.localStorage.key(i);
+        // keyname is now equal to "key"
+        var value = window.localStorage.getItem("key");
+        // value is now equal to "value"
+        window.localStorage.removeItem("key");
+        window.localStorage.setItem("key2", "value2");
+        
+        window.localStorage.clear();
+        // localStorage is now empty
+    }
+function test(){
+navigator.notification.alert(window.localStorage.getItem("key2"));
+}
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p>localStorage</p>
+    <a onclick="test()">test</a>
+  </body>
+</html>
